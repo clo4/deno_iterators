@@ -1,0 +1,25 @@
+{
+    "Add imports for a test file": {
+        "scope": "javascript,typescript",
+        "description": "Add imports",
+        "prefix": "quicktestimports",
+        "body": [
+            "import { assertEquals } from \"./deps.ts\";",
+            "import { ${TM_FILENAME/(.*?)\\..*/$1/} } from \"../mod.ts\";",
+            "",
+            "Deno.test(\"${TM_FILENAME/(.*?)\\..*/$1/}\", () => {",
+            "\t$0",
+            "})"
+        ]
+    },
+    "Write a new test": {
+        "scope": "javascript,typescript",
+        "description": "Creates a new test using `Deno.test`",
+        "prefix": "test",
+        "body": [
+            "Deno.test(\"${TM_FILENAME/(.*?)\\..*/$1/}: $1\", () => {",
+            "\t$0",
+            "});"
+        ]
+    }
+}
