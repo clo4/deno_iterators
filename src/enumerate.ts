@@ -13,7 +13,7 @@ export function* enumerate<T>(
 ): Generator<[number, T]> {
   let i = start;
   for (const value of iterable) {
-    yield [i, value]
+    yield [i, value];
     i++;
   }
 }
