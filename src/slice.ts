@@ -5,31 +5,20 @@ import { isReturnResult } from "./result.ts";
 
 /**
  * Take a slice of an iterable, starting from 0.
- * @param iterable The iterable to slice.
- * @param stop The index to stop at (exclusive). Must be positive.
- * @example
  * ```
  * [...slice(count()], 5)
  * // => [0, 1, 2, 3, 4]
  * ```
- */
-export function slice<T>(
-  iterable: Iterable<T>,
-  stop: number,
-): Generator<T>;
-
-/**
+ *
  * Take a slice of an iterable.
- * @param iterable The iterable to slice.
- * @param start The index to start from (inclusive). 0 if null. Must be postive.
- * @param stop The index to stop at (exclusive). Infinity if null. Must be positive.
- * @param step Yield every N values. 1 if undefined or null. Must be positive.
- * @example
+ *
  * ```
  * [...slice(count(), 5, 10)]
  * // => [5, 6, 7, 8, 9]
  * ```
- * @example
+ *
+ * Take a slice of an iterable by steps of 2.
+ *
  * ```
  * [...slice(count(), 10, 20, 2)]
  * // => [10, 12, 14, 16, 18]
@@ -37,14 +26,11 @@ export function slice<T>(
  */
 export function slice<T>(
   iterable: Iterable<T>,
-  start: number | null,
-  stop: number | null,
-  step?: number,
-): Generator<T>;
-
-export function slice<T>(
-  iterable: Iterable<T>,
-  ...sliceArgs: [number] | [number | null, number | null, number?]
+  ...sliceArgs: [stop: number] | [
+    start: number | null,
+    stop: number | null,
+    step?: number,
+  ]
 ): Generator<T> {
   let start: number, stop: number, step: number;
 

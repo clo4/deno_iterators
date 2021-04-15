@@ -16,7 +16,7 @@ import { isReturnResult } from "./result.ts";
  */
 export function* zip<Iterables extends Iterable<unknown>[]>(
   ...iterables: Iterables
-): IterableIterator<{ [I in keyof Iterables]: Unwrap<Iterables[I]> }> {
+): Generator<{ [I in keyof Iterables]: Unwrap<Iterables[I]> }> {
   const iterators = iterables.map(iter);
   if (iterators.length) {
     for (;;) {

@@ -1,4 +1,4 @@
-export * from "https://deno.land/std@0.83.0/testing/asserts.ts";
+export * from "https://deno.land/std@0.92.0/testing/asserts.ts";
 
 /**
  * This is an approximation of infinity that's "good enough" for this

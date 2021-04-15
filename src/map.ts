@@ -10,7 +10,7 @@
 export function* map<T, FnResult>(
   iterable: Iterable<T>,
   fn: (x: T) => FnResult,
-): IterableIterator<FnResult> {
+): Generator<FnResult> {
   for (const value of iterable) {
     yield fn(value);
   }

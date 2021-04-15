@@ -13,6 +13,6 @@ import { zip } from "./zip.ts";
 export function enumerate<T>(
   iterable: Iterable<T>,
   start = 0,
-): IterableIterator<[number, T]> {
+): Generator<[number, T]> {
   return zip(count(start), iterable);
 }

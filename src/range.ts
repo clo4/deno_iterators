@@ -28,7 +28,7 @@ type RangeArgs =
  * // [10, 8, 6, 4, 2]
  * ```
  */
-export function range(...args: RangeArgs): IterableIterator<number> {
+export function range(...args: RangeArgs): Generator<number> {
   let start: number, stop: number, step: number;
 
   if (args.length === 1) {
