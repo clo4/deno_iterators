@@ -1,6 +1,7 @@
 export * from "./accumulate.ts";
 export * from "./all.ts";
 export * from "./any.ts";
+export * from "./cache.ts";
 export * from "./chain.ts";
 export * from "./compress.ts";
 export * from "./count.ts";
