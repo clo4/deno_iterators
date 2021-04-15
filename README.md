@@ -5,7 +5,7 @@ A bunch of (web-compatible) iterators and iterator-focused functions.
 ## Usage
 
 ```typescript
-import {/* */} from "https://deno.land/x/iterators@v0.1.0/mod.ts";
+import {/* */} from "https://deno.land/x/iterators@v0.2.0/mod.ts";
 ```
 
 ## License
