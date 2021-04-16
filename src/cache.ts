@@ -36,6 +36,7 @@ export interface CachedIterator<T, TReturn = any, TNext = undefined> {
  * ```
  *
  * If you call `prev()` with nothing in the cache, it will throw.
+ *
  * ```
  * const it = [0, 1, 2][Symbol.iterator]()
  * const cached = cacheIterator(it)

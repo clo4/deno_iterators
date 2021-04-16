@@ -18,6 +18,6 @@ Deno.test("accumulate: no values yields nothing", () => {
 Deno.test("accumulate: one value yields the first value", () => {
   assertEquals(
     [...accumulate([0], (prev, curr) => prev + curr)],
-    [],
+    [0],
   );
 });
